@@ -10,22 +10,22 @@ const LoginScreen = ({ navigation }) => {
     const { loading, error } = useSelector((state) => state.auth);
     const handleLogin = () => {
         // Reset navigation stack to Dashboard
-        if (!email || !password) {
-            Alert.alert('Error', 'Please fill in all fields');
-            return;
-        }
-        console.log({ email, password })
-        dispatch(loginUser({ email, password }))
-            .unwrap()
-            .then(() => {
-                Alert.alert('Success', 'Login successfully', [
-                    { text: 'OK', onPress: () => navigation.navigate('Dashboard') }
-                ]);
-            })
-            .catch((err) => {
-                Alert.alert('Login Failed', err?.message || 'Something went wrong');
-            });
-
+        // if (!email || !password) {
+        //     Alert.alert('Error', 'Please fill in all fields');
+        //     return;
+        // }
+        // console.log({ email, password })
+        // dispatch(loginUser({ email, password }))
+        //     .unwrap()
+        //     .then(() => {
+        //         Alert.alert('Success', 'Login successfully', [
+        //             { text: 'OK', onPress: () => navigation.navigate('Dashboard', { screen: 'CountScreen' }) }
+        //         ]);
+        //     })
+        //     .catch((err) => {
+        //         Alert.alert('Login Failed', err?.message || 'Something went wrong');
+        //     });
+        navigation.navigate('Dashboard', { screen: 'CountScreen' })
     };
 
     return (

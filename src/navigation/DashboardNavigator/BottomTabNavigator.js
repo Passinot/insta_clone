@@ -7,6 +7,7 @@ import ReelsScreen from '../../screen/ReelsScreen';
 import ActivityScreen from '../../screen/ActivityScreen';
 import ProfileScreen from '../../screen/ProfileScreen';
 import { ThemeContext } from '../../components/themeContext';
+import CountScreen from '../../screen/CountScreen';
 
 const Tab = createBottomTabNavigator();
 

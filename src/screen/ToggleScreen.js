@@ -1,6 +1,7 @@
 import { View, Text, Button, StatusBar } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { baseGestureHandlerWithDetectorProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlerCommon';
 
 const ToggleScreen = ({ navigation }) => {
     const [isconstToggled, setIsToggled] = useState(false);
@@ -11,10 +12,9 @@ const ToggleScreen = ({ navigation }) => {
         <SafeAreaView style={{ flex: 1, backgroundColor: isconstToggled ? 'black' : 'white' }}>
             <StatusBar barStyle={isconstToggled ? 'light-content' : 'dark-content'} />
             <Text style={{ color: isconstToggled ? 'white' : 'black', textAlign: 'center' }}>ToggleScreen</Text>
-
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: isconstToggled ? 'black' : 'white' }}>
-                <Button title='Toggle' onPress={toggle} color={isconstToggled ? 'white' : 'black'} />
-                <Text style={{ color: isconstToggled ? 'white' : 'black' }}>{isconstToggled ? 'Toogle On' : 'Toogle Off'}</Text>
+                <Button title='click me ' onPress={toggle} color={isconstToggled ? 'white' : 'black'} style={{ backgroundColor: 'red', width: 100, height: 100, borderRadius: 50, justifyContent: 'center', alignItems: 'center' }} />
+                {/* <Text style={{ color: isconstToggled ? 'white' : 'black' }}>{isconstToggled ? 'Toogle On' : 'Toogle Off'}</Text> */}
             </View>
             <Button title='Next' onPress={() => { navigation.navigate('TrafficScreen') }} color={isconstToggled ? 'white' : 'black'} />
 
